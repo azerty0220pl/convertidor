@@ -78,15 +78,14 @@ class App extends Component {
   }
 
   remove(index) {
-    if (this.state.inputValue !== '') {
-      let x = this.state.saved;
-      x.splice(index, 1);
-      this.setState({
-        saved: x
-      });
-      localStorage.setItem("convertidorSaved", JSON.stringify(x));
-    }
+    let x = this.state.saved;
+    x.splice(index, 1);
+    this.setState({
+      saved: x
+    });
+    localStorage.setItem("convertidorSaved", JSON.stringify(x));
   }
+
 
   render() {
     return (
