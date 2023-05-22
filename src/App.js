@@ -113,9 +113,9 @@ class App extends Component {
               <p>{units[this.state.selected]}</p>
             </div>
           </div>
-          <div className="converter-1">
-            <button className="converter-1-1" onClick={this.save}><FontAwesomeIcon icon={faHeart} /></button>
-            <div className="converter-1-2">
+          <div className="converter-2">
+            <button className="converter-2-1" onClick={this.save}><FontAwesomeIcon icon={faHeart} /></button>
+            <div className="converter-2-2">
               <p className="result">{this.state.resultValue}</p>
               <p>{units[this.state.selected + 1 - (this.state.selected % 2 * 2)]}</p>
             </div>

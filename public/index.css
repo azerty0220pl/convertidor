@@ -67,6 +67,10 @@ input {
   width: 80%;
 }
 
+input {
+  text-align: end;
+}
+
 .result {
   width: 80%;
   text-align: end;
@@ -80,7 +84,7 @@ input {
   width: 100%;
 }
 
-.converter-1-1, .converter-1-2 {
+.converter-1-1, .converter-1-2, .converter-2-1, .converter-2-2 {
   display: flex;
   flex-direction: row;
   width: 50%;
@@ -100,13 +104,13 @@ h2 {
   width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 4px;
+  gap: 8px;
   flex-wrap: wrap;
   padding: 0;
 }
 
 .entry {
-  width: calc(50% - 2px);
+  width: calc(50% - 4px);
   border-radius: 0.4rem;
   padding: 0.5rem;
   background-color: #ccc;
@@ -145,4 +149,42 @@ a {
   color: white;
   text-decoration: none;
   font-size: 0.75rem;
+}
+
+@media only screen and (max-width: 750px){
+  h1 {
+    width: 90%;
+  }
+
+  .entry {
+    width: 100%;
+  }
+
+  .converter,
+  .saved {
+    width: 80%;
+  }
+
+  .converter-1 {
+    flex-direction: column;
+  }
+
+  .converter-1-1, .converter-1-2 {
+    display: flex;
+    flex-direction: row;
+    margin: 0.5rem 0;
+    width: 90%;
+  }
+
+  .converter-2-1 {
+    width: 10%;
+  }
+
+  .converter-2-2 {
+    width: 90%;
+  }
+
+  .result {
+    width: 68.9%;
+  }
 }
