@@ -1,0 +1,148 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  --main-color: rgb(48, 10, 83);
+}
+
+body {
+  height: 100vh;
+  width: 100wv;
+}
+
+#root,
+.app {
+  width: 100%;
+  height: 100%;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+h1 {
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 50%;
+}
+
+.converter {
+  background-color: var(--main-color);
+  border-radius: 1rem;
+  margin: 4rem;
+  padding: 1rem;
+  padding-bottom: 0;
+  width: 50%;
+}
+
+select,
+input,
+button {
+  background-color: var(--main-color);
+  border: none;
+  color: white;
+}
+
+select,
+input {
+  border-bottom: 2px solid white;
+  width: 80%;
+}
+
+.result {
+  width: 80%;
+  text-align: end;
+}
+
+.converter-1, .converter-2 {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.converter-1-1, .converter-1-2 {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  gap: 5%;
+}
+
+h2 {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.saved {
+  width: 50%;
+}
+
+.saved-1 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.entry {
+  width: calc(50% - 2px);
+  border-radius: 0.4rem;
+  padding: 0.5rem;
+  background-color: #ccc;
+}
+
+.entry button {
+  background-color: transparent !important;
+  border: none;
+  color: black;
+  min-width: 5%
+}
+
+.entry button:first-child {
+  text-align: start;
+  width: 95%;
+}
+
+h3 {
+  width: 100%;
+  color: #4e4e4e;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background-color: var(--main-color);
+  padding: 0.5rem 0;
+  margin-top: auto;
+  width: 100%;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.75rem;
+}

@@ -89,15 +89,15 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="app">
         <header>
           <h1><FontAwesomeIcon icon={faRightLeft} /> unit converter</h1>
         </header>
 
-        <div>
+        <div className="converter">
           <h2>convert</h2>
-          <div>
-            <div>
+          <div className="converter-1">
+            <div className="converter-1-1">
               <select onChange={this.selectChange} value={this.state.selected}>
                 <option value='0' label="km to miles" />
                 <option value='1' label="miles to km" />
@@ -108,28 +108,29 @@ class App extends Component {
               </select>
               <button onClick={this.invert}><FontAwesomeIcon icon={faRightLeft} /></button>
             </div>
-            <div>
+            <div className="converter-1-2">
               <input type="number" onChange={this.inputChange} value={this.state.inputValue} />
               <p>{units[this.state.selected]}</p>
             </div>
           </div>
-          <div>
-            <button onClick={this.save}><FontAwesomeIcon icon={faHeart} /></button>
-            <p>{this.state.resultValue + ' ' + units[this.state.selected + 1 - (this.state.selected % 2 * 2)]}</p>
+          <div className="converter-1">
+            <button className="converter-1-1" onClick={this.save}><FontAwesomeIcon icon={faHeart} /></button>
+            <div className="converter-1-2">
+              <p className="result">{this.state.resultValue}</p>
+              <p>{units[this.state.selected + 1 - (this.state.selected % 2 * 2)]}</p>
+            </div>
           </div>
         </div>
 
-        <div>
+        <div className="saved">
           <h3>saved</h3>
-          <div>
+          <div className="saved-1">
             {
               this.state.saved.map((elem, index) => {
                 return (
-                  <div key={index} className="card bg-light d-flex flex-row w-auto col-md-6 m-1">
-                    <div className="w-0">
-                      <button className="btn" onClick={() => { this.load(index) }}>{elem.input + " " + units[elem.selected] + " - " + (parseFloat(elem.input) * convFactors[elem.selected]).toFixed(2) + " " + (units[elem.selected + 1 - (elem.selected % 2 * 2)])}</button>
-                      <button className="btn" onClick={() => { this.remove(index) }}>x</button>
-                    </div>
+                  <div key={index} className="entry">
+                    <button onClick={() => { this.load(index) }}>{elem.input + " " + units[elem.selected] + " - " + (parseFloat(elem.input) * convFactors[elem.selected]).toFixed(2) + " " + (units[elem.selected + 1 - (elem.selected % 2 * 2)])}</button>
+                    <button onClick={() => { this.remove(index) }}>x</button>
                   </div>)
               })
             }
