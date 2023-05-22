@@ -8,9 +8,10 @@ const units = ['km', 'miles', 'm', 'feet', 'cm', 'inches'];
 class App extends Component {
   constructor(props) {
     super(props);
+    let data = JSON.parse(localStorage.getItem('convertidorSaved'));
 
     this.state = {
-      saved: [],
+      saved: data == null ? [] : data,
       selected: 0,
       inputValue: '',
       resultValue: ''
@@ -57,14 +58,13 @@ class App extends Component {
   }
 
   save() {
-    console.log("save");
     if (this.state.inputValue !== '') {
       let x = this.state.saved;
       x.push({ selected: this.state.selected, input: this.state.inputValue });
       this.setState({
         saved: x
       });
-      console.log("saved", x)
+      localStorage.setItem("convertidorSaved", JSON.stringify(x));
     }
   }
 
@@ -78,14 +78,13 @@ class App extends Component {
   }
 
   remove(index) {
-    console.log("remove");
     if (this.state.inputValue !== '') {
       let x = this.state.saved;
       x.splice(index, 1);
       this.setState({
         saved: x
       });
-      console.log("saved", x)
+      localStorage.setItem("convertidorSaved", JSON.stringify(x));
     }
   }
 
