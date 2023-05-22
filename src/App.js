@@ -62,7 +62,9 @@ class App extends Component {
       let x = this.state.saved;
       x.push({ selected: this.state.selected, input: this.state.inputValue });
       this.setState({
-        saved: x
+        saved: x,
+        inputValue: '',
+        resultValue: ''
       });
       localStorage.setItem("convertidorSaved", JSON.stringify(x));
     }
