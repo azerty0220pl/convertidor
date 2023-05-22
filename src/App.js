@@ -91,9 +91,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div>
+        <header>
           <h1><FontAwesomeIcon icon={faRightLeft} /> unit converter</h1>
-        </div>
+        </header>
 
         <div>
           <h2>convert</h2>
@@ -136,6 +136,11 @@ class App extends Component {
             }
           </div>
         </div>
+
+        <footer>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank">Terms of service</a>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank">Privacy Policy</a>
+        </footer>
       </div>
     );
   }
