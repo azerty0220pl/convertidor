@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightLeft, faHeart } from '@fortawesome/free-solid-svg-icons';
+import axios from "axios";
 
 const convFactors = [0.621371, 1.60934, 3.28084, 0.3048, 0.393701, 2.54];
 const units = ['km', 'miles', 'm', 'feet', 'cm', 'inches'];
@@ -74,6 +75,10 @@ class Converter extends Component {
   }
 
   render() {
+    if (this.props.loading) {
+      axios.get("http://localhost:4000/load").then((data) => { this.props.load(data == null ? [] : data.data.saved); console.log(data) }).catch(err => {console.log(err)});
+    }
+
     return (
       <div className="app">
         <header>
@@ -116,7 +121,7 @@ class Converter extends Component {
                 return (
                   <div key={index} className="entry">
                     <button onClick={() => { this.load(index) }}>{elem.input + " " + units[elem.selected] + " - " + (parseFloat(elem.input) * convFactors[elem.selected]).toFixed(2) + " " + (units[elem.selected + 1 - (elem.selected % 2 * 2)])}</button>
-                    <button onClick={() => { this.props.remove(index) }}>x</button>
+                    <button onClick={() => { this.props.remove(elem); }}>x</button>
                   </div>)
               })
             }
